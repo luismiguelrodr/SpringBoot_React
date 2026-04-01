@@ -26,7 +26,7 @@
       "onAutoForward": "openPreview"
     }
   },
-  "postCreateCommand": "sudo apt update && sudo apt install -y nodejs npm && echo 'Ready to start microservices!'",
+  "postCreateCommand": "sudo apt update && sudo apt install -y nodejs npm git-lfs && echo 'Ready to start microservices!'",
   "customizations": {
     "vscode": {
       "extensions": [
