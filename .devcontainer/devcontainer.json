@@ -1,0 +1,40 @@
+{
+	"name": "Java, Maven & Node",
+	"image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+	"features": {
+		"ghcr.io/devcontainers/features/java:1": {
+			"version": "21",
+			"installMaven": "true",
+			"mavenVersion": "3.9"
+		},
+		"ghcr.io/devcontainers/features/node:1": {
+			"version": "20"
+		}
+	},
+  "forwardPorts": [8761, 8080, 8081, 8082, 3000],
+  "portsAttributes": {
+    "8761": {
+      "label": "Eureka Server",
+      "onAutoForward": "notify"
+    },
+    "8080": {
+      "label": "API Gateway",
+      "onAutoForward": "notify"
+    },
+    "3000": {
+      "label": "React App",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "postCreateCommand": "sudo apt update && sudo apt install -y nodejs npm && echo 'Ready to start microservices!'",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "pivotal.vscode-spring-boot",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  }
+}
